@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Result Page</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center"><u>VTU PROVISIONAL RESULTS</u></h2>
+        <h3>University Seat Number : {{ usn_student }}</h3>
+        <h3>Name {{ name }}</h3>
+        <h3>{{ sem }}</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                {% for val in col %}
+                    <th>{{val}}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for val in lists %}
+                    <tr>
+                        <td>{{val.code}}</td>
+                        <td>{{val.name}}</td>
+                        <td>{{val.marks1}}</td>
+                        <td>{{val.marks2}}</td>
+                        <td>{{val.total}}</td>
+                        <td>{{val.result}}</td>
+                        <td>{{val.credits}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3> SGPA : {{aggregate}}</h3>
+        <center><a href="/USNPage/"><h3><< GoBack</h3></a></center>
+    </div>
+</body>
+</html>
